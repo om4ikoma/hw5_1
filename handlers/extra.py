@@ -1,7 +1,7 @@
 from aiogram import types, Dispatcher
 from aiogram.utils import executor
 from aiogram.types import ParseMode, InlineKeyboardMarkup, InlineKeyboardButton
-from config import bot, dp,ADMIN
+from config import bot, dp, ADMIN
 import logging
 import random
 

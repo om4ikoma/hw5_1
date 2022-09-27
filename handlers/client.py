@@ -2,6 +2,7 @@ from aiogram import types, Dispatcher
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from config import bot, dp
 import random
+from database.db import sql_command_random
 
 
 async def start(message: types.Message):
@@ -62,12 +63,11 @@ async def victorina(message: types.Message):
     )
 
 
-
+async def show_random_dish(message: types.Message):
+    await sql_command_random(message)
 
 def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(start, commands=['start'])
     dp.register_message_handler(meme, commands=['meme'])
     dp.register_message_handler(victorina, commands=['victorina'])
-    # dp.register_message_handler()
-# dp.register_callback_query_handler(victorina_2, lambda call: call.data == 'button_call_1')
-# dp.register_callback_query_handler(victorina_3, lambda call: call.data == 'button_call_2')
+    dp.register_message_handler(show_random_dish, commands=['get'])
