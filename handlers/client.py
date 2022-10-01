@@ -10,12 +10,13 @@ async def start(message: types.Message):
 
 
 async def meme(message: types.Message):
-    photo = [
-        "\photo\img1.png",
-        "\photo\img2.jpg",
-        "\photo\img3.jpg",
-    ]
-    img = open(random.choice(photo), "rb")
+    # photo = [
+    #     "photo\img1.png",
+    #     "photo\img2.jpg",
+    #     "photo\img3.jpg",
+    # ]
+    # img = open(random.choice(photo), "rb")
+    img = open('photo\img1.png', 'rb')
     await bot.send_photo(message.from_user.id, photo=img)
 
 
@@ -38,8 +39,6 @@ async def victorina(message: types.Message):
         is_anonymous=False,
         reply_markup=markup,
     )
-
-
 
 
 async def victorina(message: types.Message):
@@ -65,6 +64,7 @@ async def victorina(message: types.Message):
 
 async def show_random_dish(message: types.Message):
     await sql_command_random(message)
+
 
 def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(start, commands=['start'])
