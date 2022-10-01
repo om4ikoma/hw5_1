@@ -11,9 +11,9 @@ async def start(message: types.Message):
 
 async def meme(message: types.Message):
     photo = [
-        "photo\img1.png",
-        "photo\img2.jpg",
-        "photo\img3.jpg",
+        "\photo\img1.png",
+        "\photo\img2.jpg",
+        "\photo\img3.jpg",
     ]
     img = open(random.choice(photo), "rb")
     await bot.send_photo(message.from_user.id, photo=img)
