@@ -20,6 +20,7 @@ async def meme(message: types.Message):
     await bot.send_photo(message.from_user.id, photo=img)
 
 
+
 async def victorina(message: types.Message):
     markup = InlineKeyboardMarkup()
     button_call_1 = InlineKeyboardButton("Next", callback_data="button_call_1")
