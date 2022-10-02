@@ -63,8 +63,8 @@ async def victorina(message: types.Message):
     )
 
 
-async def show_random_dish(message: types.Message):
-    await sql_command_random(message)
+# async def show_random_dish(message: types.Message):
+#     await sql_command_random(message)
 
 
 def register_handlers_client(dp: Dispatcher):
