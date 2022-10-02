@@ -24,6 +24,7 @@ async def victorina_2(call: types.CallbackQuery):
         reply_markup=markup,
     )
 
+
 async def victorina_3(call: types.CallbackQuery):
     markup = InlineKeyboardMarkup()
     button_call_3 = InlineKeyboardButton("Next", callback_data="button_call_2")
