@@ -51,7 +51,6 @@ async def load_price(message: types.Message, state: FSMContext):
                                      f"Description: {menu['description']}\n"
                                      f"Price: {menu['price']}")
 
-    await db.sql_command_insert(state)
     await state.finish()
     await message.answer("Блюдо добавлено")
 
