@@ -71,4 +71,3 @@ def register_handlers_client(dp: Dispatcher):
     dp.register_message_handler(start, commands=['start'])
     dp.register_message_handler(meme, commands=['meme'])
     dp.register_message_handler(victorina, commands=['victorina'])
-    dp.register_message_handler(show_random_dish, commands=['get'])
