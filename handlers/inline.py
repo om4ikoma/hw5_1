@@ -7,7 +7,7 @@ async def inline_google_handler(query: types.InlineQuery):
     link = f"https://www.google.com/{text}"
     articles = [types.InlineQueryResultArticle(
         id=hashlib.md5(text.encode()).hexdigest(),
-        title="Goggle: ",
+        title="Google: ",
         url=link,
         input_message_content=types.InputMessageContent(
             message_text=link

@@ -55,27 +55,6 @@ async def load_price(message: types.Message, state: FSMContext):
     await message.answer("Блюдо добавлено")
 
 
-# async def delete_dishs(message: types.Message):
-#     dishs = await db.sql_command_all()
-#     for dish in dishs:
-#         await bot.send_photo(message.from_user.id, dish[2],
-#                              caption=f"Name: {dish[3]}\n"
-#                                      f"Description: {dish[4]}\n"
-#                                      f"Price: {dish[5]}",
-#                              reply_markup=InlineKeyboardMarkup().add(
-#                                  InlineKeyboardButton(
-#                                      f"delete {dish[3]}",
-#                                      callback_data=f"delete {dish[0]}"
-#                                  )
-#                              ))
-#
-#
-# async def complete_delete(call: types.CallbackQuery):
-#     await db.sql_command_delete(call.data.replace("delete ", ""))
-#     await call.answer(text="Данное блюдо удалено!", show_alert=True)
-#     await bot.delete_message(call.message.chat.id, call.message.chat.id)
-
-
 def register_hanlers_fsmAdminMenu(dp: Dispatcher):
     dp.register_message_handler(fsm_start, commands=['reg'])
     dp.register_message_handler(load_photo, state=FsmAdminMenu.photo,
@@ -83,8 +62,3 @@ def register_hanlers_fsmAdminMenu(dp: Dispatcher):
     dp.register_message_handler(load_name, state=FsmAdminMenu.name)
     dp.register_message_handler(load_description, state=FsmAdminMenu.description)
     dp.register_message_handler(load_price, state=FsmAdminMenu.price)
-    # dp.register_message_handler(delete_dishs, commands=['deleted'])
-    # dp.register_callback_query_handler(
-    #     complete_delete,
-    #     lambda call: call.data and call.data.startswith("delete")
-    # )
