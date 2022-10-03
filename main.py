@@ -12,7 +12,7 @@ async def on_startup(_):
 client.register_handlers_client(dp)
 callback.register_handlers_callback(dp)
 fsmAdminMenu.register_hanlers_fsmAdminMenu(dp)
-inline.inline_google_handler(dp)
+inline.register_handlers_inline(dp)
 notification.register_handlers_notification(dp)
 
 # extra.register_handlers_extra(dp)
